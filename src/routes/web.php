@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,13 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+require_once base_path('routes/auth.php');
+
+Route::get('/tasks', [Controllers\Tasks\TaskController::class, 'index'])->name('tasks.index');
 
 Route::get('/', function () {
     return view('welcome');
 });
-
+//
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+//require __DIR__.'/auth.php';
