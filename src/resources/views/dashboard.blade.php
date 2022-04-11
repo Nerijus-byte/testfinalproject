@@ -1,17 +1,24 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+    <link href="{{ mix('css/shop.css') }}" rel="stylesheet">
+
+    <title>{{ config('app.name') }}</title>
+</head>
+    <body>
+        <div id="app">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <a href="/">
+                        <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    </a>
                 </div>
-            </div>
+            </nav>
         </div>
-    </div>
-</x-app-layout>
+    </body>
+    <script src="{{ mix('js/shop.js') }}"></script>
+</html>
