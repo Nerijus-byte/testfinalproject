@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <link href="{{ mix('css/shop.css') }}" rel="stylesheet">
-
-    <title>{{ config('app.name') }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
 <body>
-<div id="app-tasker"></div>
+
 </body>
-<script src="{{ mix('js/shop.js') }}"></script>
 </html>
