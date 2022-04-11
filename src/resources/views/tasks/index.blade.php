@@ -26,7 +26,7 @@
     <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
         <div class="row flex-grow-sm-1 flex-grow-0">
             <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3">
-                <div class="bg-light border rounded-3 p-1 h-auto sticky-top">
+                <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
                     <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
                         <li class="nav-item">
                             <a href="#" class="nav-link px-2 text-truncate">
@@ -65,9 +65,37 @@
                 </div>
             </aside>
             <main class="col overflow-auto">
-                <div class="bg-light border rounded-3 p-3">
-                    <h2>Hello,  {{ Auth::user()->name }}</h2>
-                    <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
+                <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+                    <h1 class="display-4">Hello, {{ Auth::user()->name }}</h1>
+                    <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+                </div>
+                <div class="container">
+                    <div class="card-deck mb-3 text-center">
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-header">
+                                <h4 class="my-0 font-weight-normal">Free</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>10 users included</li>
+                                </ul>
+                                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                            </div>
+                        </div>
+                        <div class="card mb-4 box-shadow">
+                            <div class="card-header">
+                                <h4 class="my-0 font-weight-normal">Pro</h4>
+                            </div>
+                            <div class="card-body">
+                                <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                                <ul class="list-unstyled mt-3 mb-4">
+                                    <li>20 users included</li>
+                                </ul>
+                                <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
             @include('partials.footer')
