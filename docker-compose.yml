@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+    nginx:
+        build: ./nginx/
+        container_name: dashboard-laravel-nginx
+        working_dir: /home/dashboard
+        ports:
+            - 8084:80
+        volumes:
+            - ./src:/home/dashboard
+    php:
+        build: ./php/
+        container_name: dashboard-laravel-php
+        working_dir: /home/dashboard
+        volumes:
+            - ./src:/home/dashboard
+            - ./src/storage/logs/php-fpm:/var/log/php-fpm
+        env_file:
+            - ./.env
+    db:
+        container_name: dashboard-laravel-db
+        image: mariadb:10.6.5
+        env_file:
+            - ./mysql/.env
+        volumes:
+            - ./mysql/data:/var/lib/mysql
+        ports:
+            - 3336:3306
