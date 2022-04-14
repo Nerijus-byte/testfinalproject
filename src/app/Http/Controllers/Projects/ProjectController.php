@@ -22,7 +22,7 @@ class ProjectController extends Controller
 
         $request->validate(
 
-            ['name' => 'required']
+            ['projector' => 'required']
         );
 
         $addProject = new Project();

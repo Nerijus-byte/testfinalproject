@@ -22,7 +22,7 @@ class TaskController extends Controller
     {
         $request->validate(
 
-            ['name' => 'required']
+            ['tasker' => 'required']
         );
 
         $addTask = new Task();
