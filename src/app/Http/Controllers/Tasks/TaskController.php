@@ -20,6 +20,11 @@ class TaskController extends Controller
 
     public function createTask(Request $request)
     {
+        $request->validate(
+
+            ['name' => 'required']
+        );
+
         $addTask = new Task();
 
         $addTask->name = $request->tasker;

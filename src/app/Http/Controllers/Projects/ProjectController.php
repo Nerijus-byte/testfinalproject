@@ -19,6 +19,12 @@ class ProjectController extends Controller
 
     public function createProject(Request $request)
     {
+
+        $request->validate(
+
+            ['name' => 'required']
+        );
+
         $addProject = new Project();
 
         $addProject->name = $request->projector;

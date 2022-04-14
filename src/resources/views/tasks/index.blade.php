@@ -13,6 +13,15 @@
                            aria-label="Example text with button addon" aria-describedby="button-addon1">
                     </div>
                 </form>
+                @if( $errors->any())
+                    <div class="w-4/8 m-auto text-center">
+                        @foreach ($errors->all() as $error)
+                            <li class="text-red-500 list-none">
+                                {{ $error }}
+                            </li>
+                        @endforeach
+                    </div>
+                @endif
             </div>
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">My Tasks List</h4>
