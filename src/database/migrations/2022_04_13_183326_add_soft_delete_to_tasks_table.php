@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table)
+        Schema::table('tasks', function (Blueprint $table)
         {
-            $table->id();
-
-            $table->string('name')->nullable();
-
-            $table->text('description');
-
-            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notes');
+        Schema::table('tasks', function (Blueprint $table)
+        {
+            $table->dropSoftDeletes();
+        });
     }
 };
